@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>My first Vue app</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/vue"></script>
 </head>
+
 <body>
   <div id="app">
     {{ message }}
+    <span v-if="seen">Now you see me</span>
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+    <button v-on:click="reverseMessage">Reverse Message</button>
   </div>
 
-  <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vuejs!'
-      }
-    })
-  </script>
+  <script src="index.js"></script>
 </body>
+
 </html>
